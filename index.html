@@ -1,0 +1,2452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TERM 2 SUMMATIVE TEST 2 in SCIENCE 10</title>
+    <style>
+        /* ── Reset & Base ── */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Bookman Old Style", Bookman, Georgia, "Times New Roman", serif;
+        }
+
+        body {
+            background-color: #f5f2eb;
+            color: #1a1a1a;
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease;
+            min-height: 100vh;
+            padding: 12px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* ── DEPED HEADER ── */
+        .deped-header {
+            background: #ffffff;
+            color: #000000;
+            text-align: center;
+            padding: 10px 16px 6px 16px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            border-bottom: 3px solid #1a1a1a;
+            font-family: "Bookman Old Style", Bookman, Georgia, "Times New Roman", serif;
+        }
+        .deped-header .line {
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 0;
+            letter-spacing: 0.3px;
+        }
+        .deped-header .line-1 {
+            font-size: 18px;
+        }
+        .deped-header .line-2 {
+            font-size: 16px;
+        }
+        .deped-header .line-3 {
+            font-size: 16px;
+        }
+        .deped-header .line-4 {
+            font-size: 20px;
+        }
+        .deped-header .line-5 {
+            font-size: 16px;
+            margin-top: 2px;
+        }
+        .deped-header .line-6 {
+            font-size: 22px;
+            margin-top: 2px;
+            letter-spacing: 0.5px;
+        }
+        .deped-header .line-7 {
+            font-size: 18px;
+            margin-top: 0px;
+        }
+
+        /* ── Screens ── */
+        .screen {
+            display: none;
+            background: #ffffff;
+            padding: 16px 24px;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            margin-bottom: 12px;
+            font-family: "Bookman Old Style", Bookman, Georgia, "Times New Roman", serif;
+        }
+        .screen.active {
+            display: block;
+        }
+
+        /* ── Access Message ── */
+        .access-message {
+            padding: 10px 14px;
+            border-radius: 4px;
+            margin: 12px 0;
+            text-align: center;
+            font-weight: 700;
+            font-size: 16px;
+            font-family: "Bookman Old Style", Bookman, Georgia, "Times New Roman", serif;
+        }
+        .access-denied {
+            background-color: #f8e8e8;
+            color: #8b1a1a;
+            border: 1px solid #e0b3b3;
+        }
+        .access-allowed {
+            background-color: #e8f5e8;
+            color: #1a6b1a;
+            border: 1px solid #b3d9b3;
+        }
+
+        /* ── Form Elements ── */
+        .form-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .form-row .form-group {
+            flex: 1;
+            min-width: 200px;
+        }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 4px;
+            font-weight: 700;
+            font-size: 16px;
+            font-family: "Bookman Old Style", Bookman, Georgia, "Times New Roman", serif;
+        }
+        .form-group input[type="text"],
+        .form-group select {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #bbb;
+            border-radius: 4px;
+            font-size: 16px;
+            font-family: "Bookman Old Style", Bookman, Georgia, "Times New Roman", serif;
+            background: #fefcf8;
+            color: #1a1a1a;
+        }
+        .form-group input[type="text"]:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #1a1a1a;
+            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+        }
+        .radio-group {
+            display: flex;
+            gap: 24px;
+            margin-top: 4px;
+        }
+        .radio-group label {
+            font-weight: 400;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            font-family: "Bookman Old Style", Bookman, Georgia, "Times New Roman", serif;
+        }
+        .radio-group input[type="radio"] {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+            accent-color: #1a1a1a;
+        }
+
+        /* ── Passcode ── */
+        .passcode-group {
+            display: none;
+            margin-bottom: 16px;
+            animation: fadeIn 0.3s ease;
+        }
+        .passcode-group.visible {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-4px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .passcode-group input[type="password"] {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #bbb;
+            border-radius: 4px;
+            font-size: 16px;
+            font-family: "Bookman Old Style", Bookman, Georgia, "Times New Roman", serif;
+            background: #fefcf8;
+            letter-spacing: 2px;
+            color: #1a1a1a;
+        }
+        .passcode-group input[type="password"]:focus {
+            outline: none;
+            border-color: #1a1a1a;
+            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+        }
+        .passcode-error {
+            color: #b22222;
+            font-size: 15px;
+            margin-top: 4px;
+            display: none;
+            font-weight: 700;
+            font-family: "Bookman Old Style", Bookman, Georgia, "Times New Roman", serif;
+        }
+        .passcode-error.visible {
+            display: block;
+        }
+
+        /* ── Buttons ── */
+        .btn {
+            display: inline-block;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: "Bookman Old Style", Bookman, Georgia, "Times New Roman", serif;
+            transition: background-color 0.25s;
+            letter-spacing: 0.3px;
+        }
+        .btn:hover:not(:disabled) {
+            background-color: #333333;
+        }
+        .btn:disabled {
+            background-color: #999999;
+            cursor: not-allowed;
+        }
+        .btn-success {
+            background-color: #1a6b1a;
+        }
+        .btn-success:hover:not(:disabled) {
+            background-color: #2a7a2a;
+        }
+        .btn-danger {
+            background-color: #8b1a1a;
+        }
+        .btn-danger:hover:not(:disabled) {
+            background-color: #aa2222;
+        }
+        .btn-print {
+            background-color: #2c3e50;
+        }
+        .btn-print:hover:not(:disabled) {
+            background-color: #3d566e;
+        }
+
+        /* ── Quiz ── */
+        .question-container {
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e8e4de;
+        }
+        .question-text {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.5;
+            font-family: "Bookman Old Style", Bookman, Georgia, "Times New Roman", serif;
+        }
+        .options-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 6px;
+        }
+        .option {
+            padding: 10px 14px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.4;
+            font-family: "Bookman Old Style", Bookman, Georgia, "Times New Roman", serif;
+            background: #fefcf8;
+            color: #1a1a1a;
+        }
+        .option:hover {
+            background-color: #f5f0e8;
+            border-color: #999;
+        }
+        .option.selected {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            border-color: #1a1a1a;
+        }
+        .auto-next-notice {
+            background-color: #f5f0e8;
+            border: 1px solid #ddd6cc;
+            border-radius: 4px;
+            padding: 6px 12px;
+            margin-top: 8px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 400;
+            color: #3d3d3d;
+            font-family: "Bookman Old Style", Bookman, Georgia, "Times New Roman", serif;
+        }
+
+        /* ── Navigation ── */
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .question-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 8px;
+        }
+        .nav-btn {
+            width: 36px;
+            height: 36px;
+            border: 1px solid #ccc;
+            background: #fefcf8;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 15px;
+            font-family: "Bookman Old Style", Bookman, Georgia, "Times New Roman", serif;
+            transition: 0.2s;
+            color: #1a1a1a;
+        }
+        .nav-btn:hover {
+            background-color: #f0ebe3;
+        }
+        .nav-btn.active {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            border-color: #1a1a1a;
+        }
+        .nav-btn.answered {
+            background-color: #1a6b1a;
+            color: #ffffff;
+            border-color: #1a6b1a;
+        }
+
+        /* ── Timer ── */
+        .timer {
+            position: fixed;
+            top: 12px;
+            right: 12px;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 17px;
+            font-family: "Bookman Old Style", Bookman, Georgia, "Times New Roman", serif;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+            z-index: 100;
+            letter-spacing: 0.5px;
+        }
+
+        /* ── Cheating Warning ── */
+        .cheating-warning {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #b22222;
+            color: #ffffff;
+            text-align: center;
+            padding: 12px;
+            font-weight: 700;
+            font-size: 17px;
+            font-family: "Bookman Old Style", Bookman, Georgia, "Times New Roman", serif;
+            z-index: 1000;
+            display: none;
+            letter-spacing: 0.3px;
+        }
+
+        /* ── Progress ── */
+        .progress-bar {
+            height: 4px;
+            background-color: #e8e4de;
+            border-radius: 3px;
+            margin: 8px 0 6px 0;
+            overflow: hidden;
+        }
+        .progress {
+            height: 100%;
+            background-color: #1a1a1a;
+            width: 0%;
+            transition: width 0.4s;
+        }
+
+        /* ── Fullscreen Overlay ── */
+        .fullscreen-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            color: #ffffff;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            font-family: "Bookman Old Style", Bookman, Georgia, "Times New Roman", serif;
+        }
+        .fullscreen-overlay.active {
+            display: flex;
+        }
+        .fullscreen-overlay h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .fullscreen-overlay p {
+            font-size: 18px;
+            font-weight: 400;
+        }
+        .fullscreen-overlay .btn {
+            margin-top: 16px;
+        }
+
+        /* ── Results & Verification Panel ── */
+        .results-summary {
+            background-color: #f8f5f0;
+            border-radius: 4px;
+            padding: 20px 24px;
+            margin: 16px 0;
+            font-family: "Bookman Old Style", Bookman, Georgia, "Times New Roman", serif;
+        }
+        .results-summary .exam-info {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ddd6cc;
+            line-height: 1.5;
+            text-align: center;
+            color: #1a1a1a;
+        }
+        .results-summary .exam-info span {
+            display: inline-block;
+            margin: 0 4px;
+        }
+        .results-summary p {
+            font-size: 17px;
+            font-weight: 400;
+            margin-bottom: 6px;
+            line-height: 1.6;
+        }
+        .results-summary strong {
+            font-weight: 700;
+        }
+
+        /* ── Verification Panel ── */
+        .verification-panel {
+            background-color: #f0f7f0;
+            border-radius: 4px;
+            padding: 20px 24px;
+            margin: 16px 0;
+            border: 2px solid #1a6b1a;
+            font-family: "Bookman Old Style", Bookman, Georgia, "Times New Roman", serif;
+            display: none;
+        }
+        .verification-panel.visible {
+            display: block;
+        }
+        .verification-panel .panel-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a6b1a;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #b3d9b3;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .verification-panel .panel-title .check {
+            font-size: 26px;
+        }
+        .verification-panel .verification-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 24px;
+        }
+        .verification-panel .verification-item {
+            display: flex;
+            padding: 4px 0;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .verification-panel .verification-item .label {
+            font-weight: 700;
+            min-width: 120px;
+            color: #2c3e50;
+        }
+        .verification-panel .verification-item .value {
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+        .verification-panel .verification-item .value.success {
+            color: #1a6b1a;
+            font-weight: 700;
+        }
+        .verification-panel .action-buttons {
+            margin-top: 16px;
+            padding-top: 14px;
+            border-top: 2px solid #b3d9b3;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .verification-panel .action-buttons .btn {
+            font-size: 15px;
+            padding: 8px 20px;
+        }
+
+        .screen h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-family: "Bookman Old Style", Bookman, Georgia, "Times New Roman", serif;
+            color: #1a1a1a;
+        }
+
+        /* ── Submission Status ── */
+        .submission-status {
+            margin-top: 12px;
+            padding: 10px 14px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 400;
+            text-align: center;
+            display: none;
+            font-family: "Bookman Old Style", Bookman, Georgia, "Times New Roman", serif;
+        }
+        .submission-status.success {
+            display: block;
+            background-color: #e8f5e8;
+            color: #1a6b1a;
+            border: 1px solid #b3d9b3;
+        }
+        .submission-status.error {
+            display: block;
+            background-color: #f8e8e8;
+            color: #8b1a1a;
+            border: 1px solid #e0b3b3;
+        }
+        .submission-status.loading {
+            display: block;
+            background-color: #f5f0e8;
+            color: #3d3d3d;
+            border: 1px solid #ddd6cc;
+        }
+
+        /* ── Print Styles ── */
+        @media print {
+            body {
+                background-color: #fff !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                overflow: visible !important;
+            }
+            .container {
+                max-width: 100% !important;
+                padding: 10px !important;
+            }
+            .deped-header {
+                box-shadow: none !important;
+                border-bottom: 2px solid #000 !important;
+                padding: 10px 16px 6px 16px !important;
+                margin-bottom: 12px !important;
+                background: #fff !important;
+            }
+            .screen {
+                box-shadow: none !important;
+                border: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .screen.active {
+                display: block !important;
+            }
+            .timer,
+            .btn,
+            .btn-print,
+            .btn-success,
+            .btn-danger,
+            .navigation,
+            .question-nav,
+            .auto-next-notice,
+            .progress-bar,
+            .cheating-warning,
+            .fullscreen-overlay,
+            #submit-record,
+            #submission-status,
+            .action-buttons .btn {
+                display: none !important;
+            }
+            .verification-panel {
+                border: 1px solid #1a6b1a !important;
+                background-color: #fafcfa !important;
+                display: block !important;
+                page-break-inside: avoid !important;
+            }
+            .results-summary {
+                border: 1px solid #ddd !important;
+                background-color: #fafafa !important;
+                page-break-inside: avoid !important;
+            }
+            .verification-panel .action-buttons {
+                display: none !important;
+            }
+            .verification-panel .verification-grid {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .results-summary .exam-info {
+                border-bottom: 2px solid #000 !important;
+            }
+            .verification-panel .panel-title {
+                border-bottom: 2px solid #000 !important;
+            }
+            .verification-panel .panel-title .check {
+                font-size: 22px !important;
+            }
+            .verification-panel .verification-item .label {
+                color: #000 !important;
+            }
+            /* Hide any extra elements */
+            .form-group,
+            #submit-record,
+            .submission-status {
+                display: none !important;
+            }
+            .results-summary p {
+                font-size: 15px !important;
+            }
+            .verification-panel .verification-item {
+                font-size: 14px !important;
+            }
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            body {
+                padding: 8px;
+            }
+            .screen {
+                padding: 12px 14px;
+            }
+            .deped-header {
+                padding: 8px 12px 4px 12px;
+                margin-bottom: 8px;
+            }
+            .deped-header .line-1 {
+                font-size: 16px;
+            }
+            .deped-header .line-2 {
+                font-size: 14px;
+            }
+            .deped-header .line-3 {
+                font-size: 14px;
+            }
+            .deped-header .line-4 {
+                font-size: 17px;
+            }
+            .deped-header .line-5 {
+                font-size: 14px;
+            }
+            .deped-header .line-6 {
+                font-size: 18px;
+            }
+            .deped-header .line-7 {
+                font-size: 15px;
+            }
+            .question-text {
+                font-size: 18px;
+            }
+            .option {
+                font-size: 16px;
+                padding: 8px 12px;
+            }
+            .timer {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin-bottom: 8px;
+                text-align: center;
+                font-size: 16px;
+                padding: 4px 12px;
+            }
+            .navigation {
+                flex-direction: column;
+            }
+            .navigation .btn {
+                width: 100%;
+                text-align: center;
+            }
+            .radio-group {
+                flex-direction: column;
+                gap: 4px;
+            }
+            .question-nav {
+                justify-content: center;
+            }
+            .nav-btn {
+                width: 34px;
+                height: 34px;
+                font-size: 14px;
+            }
+            .results-summary p {
+                font-size: 16px;
+            }
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            .form-row .form-group {
+                min-width: unset;
+            }
+            .auto-next-notice {
+                font-size: 13px;
+                padding: 4px 10px;
+            }
+            .verification-panel .verification-grid {
+                grid-template-columns: 1fr;
+            }
+            .verification-panel .verification-item .label {
+                min-width: 100px;
+            }
+            .verification-panel .action-buttons {
+                flex-direction: column;
+            }
+            .verification-panel .action-buttons .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media print {
+            .timer {
+                position: static !important;
+                margin-bottom: 8px !important;
+            }
+            .btn {
+                display: none !important;
+            }
+            .fullscreen-overlay {
+                display: none !important;
+            }
+            .cheating-warning {
+                display: none !important;
+            }
+            .question-nav {
+                display: none !important;
+            }
+            .auto-next-notice {
+                display: none !important;
+            }
+            .navigation {
+                display: none !important;
+            }
+            .deped-header {
+                box-shadow: none !important;
+                border-bottom: 2px solid #000 !important;
+            }
+            .screen {
+                box-shadow: none !important;
+                border: 1px solid #ddd !important;
+            }
+            body {
+                background-color: #fff !important;
+                padding: 0 !important;
+            }
+            .container {
+                max-width: 100% !important;
+                padding: 10px !important;
+            }
+            .verification-panel .action-buttons {
+                display: none !important;
+            }
+            .submission-status {
+                display: none !important;
+            }
+            #submit-record {
+                display: none !important;
+            }
+            .form-group {
+                display: none !important;
+            }
+            .results-summary .exam-info {
+                border-bottom: 2px solid #000 !important;
+            }
+            .verification-panel .panel-title {
+                border-bottom: 2px solid #000 !important;
+            }
+            .verification-panel {
+                border: 1px solid #1a6b1a !important;
+                background-color: #fafcfa !important;
+                display: block !important;
+                page-break-inside: avoid !important;
+            }
+        }
+
+        /* Strict online mode: blocks exam interaction until real internet returns */
+        #online-lock-overlay {
+            position: fixed; inset: 0; z-index: 999999; display: none;
+            align-items: center; justify-content: center; padding: 24px;
+            background: rgba(8, 18, 35, 0.97); color: #fff; text-align: center;
+        }
+        #online-lock-overlay.active { display: flex; }
+        #online-lock-overlay .online-lock-card { max-width: 520px; width: 100%; padding: 28px;
+            border-radius: 16px; background: #17243a; box-shadow: 0 12px 40px rgba(0,0,0,.35); }
+        #online-lock-overlay h2 { margin: 0 0 12px; color: #ffcc66; }
+        #online-lock-overlay p { line-height: 1.55; }
+        #online-lock-status { font-weight: 700; margin-top: 18px; }
+    </style>
+</head>
+<body>
+    <div id="online-lock-overlay" role="alertdialog" aria-modal="true" aria-live="assertive">
+        <div class="online-lock-card">
+            <h2>⚠️ INTERNET CONNECTION LOST</h2>
+            <p>The examination is temporarily locked because an active internet connection is required.</p>
+            <p>Your exam will remain paused. Reconnect to the internet to continue the same examination.</p>
+            <div id="online-lock-status">Checking connection…</div>
+        </div>
+    </div>
+    <div class="container">
+        <!-- ========== DEPED HEADER ========== -->
+        <header class="deped-header" id="deped-header">
+            <div class="line line-1">Republic of the Philippines</div>
+            <div class="line line-2">Department of Education</div>
+            <div class="line line-3">NATIONAL CAPITAL REGION</div>
+            <div class="line line-4">SCHOOLS DIVISION OFFICE OF SAN JUAN CITY</div>
+            <div class="line line-5">San Juan National High School</div>
+            <div class="line line-6" id="header-exam-title">TERM 2 SUMMATIVE TEST 2 in SCIENCE 10</div>
+            <div class="line line-7" id="header-school-year">S.Y. 2026–2027</div>
+        </header>
+
+        <!-- ========== REGISTRATION SCREEN ========== -->
+        <div id="warning-screen" class="screen active">
+            <!-- Last Name & First Name in a row -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="student-lastname">Last Name</label>
+                    <input type="text" id="student-lastname" placeholder="Enter your last name" />
+                </div>
+                <div class="form-group">
+                    <label for="student-firstname">First Name</label>
+                    <input type="text" id="student-firstname" placeholder="Enter your first name" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Gender</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="Male" /> Male</label>
+                    <label><input type="radio" name="gender" value="Female" /> Female</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="student-section">Section</label>
+                <select id="student-section">
+                    <option value="">— Select your section —</option>
+                    <option value="SPC">SPC</option>
+                    <option value="RIZAL">RIZAL</option>
+                    <option value="BONIFACIO">BONIFACIO</option>
+                    <option value="BURGOS">BURGOS</option>
+                    <option value="CALDERON">CALDERON</option>
+                    <option value="DEL PILAR">DEL PILAR</option>
+                    <option value="ESCODA">ESCODA</option>
+                    <option value="JACINTO">JACINTO</option>
+                    <option value="MABINI">MABINI</option>
+                    <option value="PATERNO">PATERNO</option>
+                    <option value="SILANG">SILANG</option>
+                    <option value="ZAMORA">ZAMORA</option>
+                </select>
+            </div>
+
+            <div class="passcode-group" id="passcode-group">
+                <label for="section-passcode">Passcode</label>
+                <input type="password" id="section-passcode" placeholder="Enter your passcode" autocomplete="off" />
+                <div class="passcode-error" id="passcode-error">Incorrect passcode. Please try again.</div>
+            </div>
+
+            <div id="access-message" class="access-message"></div>
+
+            <button id="start-quiz" class="btn" disabled>Start Quiz</button>
+        </div>
+
+        <!-- ========== QUIZ SCREEN ========== -->
+        <div id="quiz-screen" class="screen">
+            <div class="timer" id="quiz-timer">20:00</div>
+            <div class="cheating-warning" id="cheating-warning">
+                ⚠️ Unauthorized activity detected — attempt recorded.
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress" id="quiz-progress"></div>
+            </div>
+
+            <h2 id="current-question-title">Question 1 of 25</h2>
+            <div class="question-container">
+                <div class="question-text" id="question-text"></div>
+                <div class="options-container" id="options-container"></div>
+            </div>
+
+            <div class="auto-next-notice">
+                After selecting an answer, the quiz automatically proceeds to the next question.
+            </div>
+
+            <div class="question-nav" id="question-nav"></div>
+
+            <div class="navigation">
+                <button id="prev-question" class="btn">Previous</button>
+                <button id="next-question" class="btn">Next</button>
+                <button id="submit-quiz" class="btn btn-success">Submit Quiz</button>
+            </div>
+        </div>
+
+        <!-- ========== RESULTS SCREEN ========== -->
+        <div id="results-screen" class="screen">
+            <h2>Quiz Completed</h2>
+            <div class="results-summary" id="results-summary"></div>
+
+            <!-- Verification Panel -->
+            <div class="verification-panel" id="verification-panel">
+                <div class="panel-title">
+                    <span class="check">✅</span>
+                    Submission Verification
+                </div>
+                <div class="verification-grid" id="verification-grid">
+                    <!-- Populated by JavaScript -->
+                </div>
+                <div class="action-buttons">
+                    <button id="print-result" class="btn btn-print">🖨️ Print Result</button>
+                    <button id="save-pdf" class="btn btn-print">📄 Save as PDF</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button id="submit-record" class="btn btn-success">Submit to Record</button>
+                <div id="submission-status" class="submission-status"></div>
+            </div>
+        </div>
+
+        <!-- ========== FULLSCREEN OVERLAY ========== -->
+        <div class="fullscreen-overlay" id="fullscreen-overlay">
+            <h2>Fullscreen Required</h2>
+            <p>Please return to fullscreen to continue.</p>
+            <p id="fullscreen-countdown" style="margin-top:8px;">Returning in 10 seconds…</p>
+            <button class="btn" id="return-fullscreen">Return to Fullscreen</button>
+        </div>
+    </div>
+
+    <script>
+        // ================================================================
+        //  ═══════════════════════════════════════════════════════════════
+        //  CENTRAL CONFIGURATION — Edit only this block
+        //  ═══════════════════════════════════════════════════════════════
+        // ================================================================
+
+        const SETTINGS = {
+            // ─── Application Mode ──────────────────────────────────────────
+            // Valid values: "TESTING" | "EXAM" | "OPEN"
+            APP_MODE: "EXAM",
+
+            // ─── Exam Information ─────────────────────────────────────────
+            EXAM_INFORMATION: {
+                EXAM_CODE: "ST2-T1-SCI10", // internal use only – never shown in UI
+                SCHOOL_YEAR: "2026–2027",
+                TERM: "TERM 2",
+                SUBJECT: "SCIENCE 10",
+                EXAM_TITLE: "SUMMATIVE TEST 2",
+                TOTAL_ITEMS: 25,
+                TIME_LIMIT: 20 // minutes
+            },
+
+            // ─── Google Apps Script ──────────────────────────────────────
+            // ⚠️ IMPORTANT: Replace the URL below with YOUR deployed script URL.
+            // To deploy: Open your Google Apps Script project → Deploy → New Deployment
+            // → Web app → Execute as "Me" → Who has access "Anyone" → Deploy.
+            // Copy the URL and paste it here.
+            GOOGLE_SCRIPT: {
+                URL: "https://script.google.com/macros/s/AKfycby6d80Q0vlrzFCaL_vYYHqsUdfury8ksoqx8tzjp5YPRqTnF_1LNQAPHc-WVlOY5PLcxA/exec"
+            },
+
+            // ─── Official Exam Date ──────────────────────────────────────
+            EXAM_DATE: '2026-10-29',
+
+            // ─── Testing Window ──────────────────────────────────────────
+            TESTING_WINDOW_START: '06:00',
+            TESTING_WINDOW_END: '10:20',
+
+            // ─── Anti‑Cheating ───────────────────────────────────────────
+            MAX_CHEATING_ATTEMPTS: 3,
+
+           // ─── Section Schedules ───────────────────────────────────────
+SECTION_SCHEDULE: {
+    SPC: { start: '06:00', end: '06:30' },
+    RIZAL: { start: '09:50', end: '10:20' },          // changed
+    BONIFACIO: { start: '06:00', end: '06:30' },      // changed
+    BURGOS: { start: '07:30', end: '08:00' },
+    CALDERON: { start: '08:20', end: '08:50' },
+    'DEL PILAR': { start: '09:20', end: '09:50' },    // changed
+    ESCODA: { start: '09:20', end: '09:50' },
+    JACINTO: { start: '09:50', end: '10:20' },
+    MABINI: { start: '06:00', end: '06:30' },
+    PATERNO: { start: '06:30', end: '07:00' },
+    SILANG: { start: '08:20', end: '08:50' },         // changed
+    ZAMORA: { start: '07:30', end: '08:00' },
+},
+
+            // ─── Section Passcodes ──────────────────────────────────────
+            SECTION_PASSCODES: {
+                SPC: 'Q7M2X9',
+                RIZAL: 'N4K8P2',
+                BONIFACIO: 'T9V3L6',
+                BURGOS: 'C5R8W1',
+                CALDERON: 'H2Z7D4',
+                'DEL PILAR': 'B6Y1F9',
+                ESCODA: 'M8Q3A5',
+                JACINTO: 'X4J9S2',
+                MABINI: 'P7D2K8',
+                PATERNO: 'L3W6N9',
+                SILANG: 'R8C5V2',
+                ZAMORA: 'F1T7Y4'
+            },
+
+            // ─── Open Passcodes ──────────────────────────────────────────
+            OPEN_PASSCODES: [
+                'G6P2X9',
+                'W3N8K5',
+                'A7R4M1',
+                'Z9D2C6'
+            ],
+
+            // ─── Monitoring Colors ──────────────────────────────────────
+            COLORS: {
+                NORMAL: '#f5f2eb',
+                ACTIVE: '#00C853',
+                WARNING: '#FFD600',
+                TERMINATED: '#D50000'
+            }
+        };
+
+        // ─── Extract from EXAM_INFORMATION ──────────────────────────────
+        const EXAM_INFO = SETTINGS.EXAM_INFORMATION;
+        const APP_MODE = SETTINGS.APP_MODE;
+        const SECTION_SCHEDULE = SETTINGS.SECTION_SCHEDULE;
+        const SECTION_PASSCODES = SETTINGS.SECTION_PASSCODES;
+        const OPEN_PASSCODES = SETTINGS.OPEN_PASSCODES;
+        const COLORS = SETTINGS.COLORS;
+        const EXAM_DATE = SETTINGS.EXAM_DATE;
+        const TESTING_WINDOW_START = SETTINGS.TESTING_WINDOW_START;
+        const TESTING_WINDOW_END = SETTINGS.TESTING_WINDOW_END;
+        const MAX_CHEATING_ATTEMPTS = SETTINGS.MAX_CHEATING_ATTEMPTS;
+        const GOOGLE_SCRIPT_URL = SETTINGS.GOOGLE_SCRIPT.URL;
+
+        // ─── Exam-derived constants ──────────────────────────────────────
+        const TOTAL_ITEMS = EXAM_INFO.TOTAL_ITEMS;
+        const TIME_LIMIT_MINUTES = EXAM_INFO.TIME_LIMIT;
+
+        // ================================================================
+        //  25 QUESTIONS (must match TOTAL_ITEMS)
+        // ================================================================
+
+        const QUESTIONS = [
+            { id: 1, competencyId: 1, competency: "Use information from secondary sources to identify examples of modern biotechnology, such as genetically modified organisms and processes.", text: "Which of the following is an example of a genetically modified organism (GMO)?", options: ["Corn genetically modified to resist insect pests", "Rice harvested using a traditional farming method", "Corn that grows naturally in a field without human intervention", "Mangoes selected for their sweetness through traditional breeding"], correct: 0 },
+            { id: 2, competencyId: 1, competency: "Use information from secondary sources to identify examples of modern biotechnology, such as genetically modified organisms and processes.", text: "What is the primary purpose of genetic engineering in modern biotechnology?", options: ["To prevent all organisms from reproducing", "To eliminate the need for scientific research", "To ensure that all organisms have identical characteristics", "To modify an organism’s genetic material to obtain desired traits"], correct: 3 },
+            { id: 3, competencyId: 1, competency: "Use information from secondary sources to identify examples of modern biotechnology, such as genetically modified organisms and processes.", text: "A scientist uses bacteria that have been genetically modified to produce human insulin. What is this an example of?", options: ["Natural selection", "Artificial selection", "Genetic engineering", "Traditional food preservation"], correct: 2 },
+            { id: 4, competencyId: 1, competency: "Use information from secondary sources to identify examples of modern biotechnology, such as genetically modified organisms and processes.", text: "Which statement best describes the difference between traditional and modern biotechnology?", options: ["Traditional biotechnology may use fermentation, while modern biotechnology can directly modify genetic material.", "Traditional biotechnology always changes DNA, while modern biotechnology never changes DNA.", "Traditional biotechnology produces food, while modern biotechnology produces only medicines.", "Traditional biotechnology uses only machines, while modern biotechnology uses only plants."], correct: 0 },
+            { id: 5, competencyId: 1, competency: "Use information from secondary sources to identify examples of modern biotechnology, such as genetically modified organisms and processes.", text: "A news article reports that scientists developed Golden Rice to help address vitamin A deficiency. Which biotechnology application does this represent?", options: ["Traditional fermentation to preserve rice", "Cloning to produce identical rice consumers", "Selective breeding to eliminate all rice diseases", "Genetic modification to improve nutritional content"], correct: 3 },
+            { id: 6, competencyId: 1, competency: "Use information from secondary sources to identify examples of modern biotechnology, such as genetically modified organisms and processes.", text: "Which process is commonly used to create genetically modified crops with specific traits?", options: ["Evaporation", "Filtration", "Genetic engineering", "Sedimentation"], correct: 2 },
+            { id: 7, competencyId: 1, competency: "Use information from secondary sources to identify examples of modern biotechnology, such as genetically modified organisms and processes.", text: "A farmer wants to reduce crop losses caused by insect pests. Which biotechnology products could help address this problem?", options: ["Corn seeds dried under sunlight", "Ordinary rice grains soaked in water", "Fermented corn used to produce vinegar", "Bt corn engineered to produce a protein effective against certain insect pests"], correct: 3 },
+            { id: 8, competencyId: 1, competency: "Use information from secondary sources to identify examples of modern biotechnology, such as genetically modified organisms and processes.", text: "A student reads a scientific article about the use of genetically modified bacteria to produce medicines. Which conclusion is best supported by this information?", options: ["All bacteria are harmful to humans.", "Genetic engineering is used only in agriculture.", "All genetically modified organisms are dangerous.", "Modern biotechnology can use modified microorganisms to produce useful medical products."], correct: 3 },
+            { id: 9, competencyId: 2, competency: "Participate in a class debate on the societal, environmental, and ethical implications of using biotechnological products and methods.", text: "Which is a potential benefit of using genetically modified crops?", options: ["They always grow without water.", "They eliminate every agricultural pest.", "They guarantee that farmers will never experience financial losses.", "They may improve resistance to certain pests and reduce crop losses."], correct: 3 },
+            { id: 10, competencyId: 2, competency: "Participate in a class debate on the societal, environmental, and ethical implications of using biotechnological products and methods.", text: "Which concern should be considered when evaluating the environmental effects of genetically modified crops?", options: ["The color of the farmer’s clothing", "The shape of the farm equipment", "The number of pages in a science textbook", "The possibility of effects on non-target organisms and biodiversity"], correct: 3 },
+            { id: 11, competencyId: 2, competency: "Participate in a class debate on the societal, environmental, and ethical implications of using biotechnological products and methods.", text: "A company plans to release a genetically modified crop into the environment. Which action is most responsible before its release?", options: ["Conduct appropriate safety and environmental assessments.", "Release it immediately to increase production.", "Ignore possible effects on other organisms.", "Prevent scientists from examining the results."], correct: 0 },
+            { id: 12, competencyId: 2, competency: "Participate in a class debate on the societal, environmental, and ethical implications of using biotechnological products and methods.", text: "Which situation raises an ethical concern about modern biotechnology?", options: ["Farmers using clean water to irrigate crops", "Scientists recording their experimental observations", "Students studying the structure of DNA", "Genetic information being used without appropriate consent or privacy protection"], correct: 3 },
+            { id: 13, competencyId: 2, competency: "Participate in a class debate on the societal, environmental, and ethical implications of using biotechnological products and methods.", text: "A farmer claims that genetically modified crops are always harmful because they are artificial. Which response demonstrates critical thinking?", options: ["Evaluate scientific evidence about the specific crop, its benefits, and its risks.", "Assume that every genetically modified crop has the same effects.", "Agree because all human-made products are dangerous.", "Reject all scientific studies about biotechnology."], correct: 0 },
+            { id: 14, competencyId: 2, competency: "Participate in a class debate on the societal, environmental, and ethical implications of using biotechnological products and methods.", text: "During a class debate, one student supports genetically modified crops because they may improve food production. Another raises concerns about biodiversity. What is the best way to evaluate their arguments?", options: ["Accept the argument of the louder student.", "Reject both arguments without investigation.", "Compare reliable scientific evidence supporting each claim.", "Choose the argument supported by the majority without considering evidence."], correct: 2 },
+            { id: 15, competencyId: 2, competency: "Participate in a class debate on the societal, environmental, and ethical implications of using biotechnological products and methods.", text: "A biotechnology company develops a life-saving medicine but sells it at a price that many low-income patients cannot afford. Which issue is most directly involved?", options: ["Access to essential healthcare and social equity", "The classification of organisms into kingdoms", "The natural selection of microorganisms", "The rate of photosynthesis in plants"], correct: 0 },
+            { id: 16, competencyId: 2, competency: "Participate in a class debate on the societal, environmental, and ethical implications of using biotechnological products and methods.", text: "Which statement is the most balanced position on modern biotechnology?", options: ["Biotechnology has no ethical or environmental implications.", "Biotechnology should be banned because it always causes harm.", "Biotechnology should be used without regulations because it always provides benefits.", "Biotechnology may offer benefits, but its risks, ethical concerns, and environmental effects must be carefully evaluated."], correct: 3 },
+            { id: 17, competencyId: 3, competency: "Identify evidence of global warming and climate change.", text: "Which observation provides evidence of global warming?", options: ["Global average surface temperatures have increased over time.", "The Moon changes its apparent shape during the month.", "Day and night occur because Earth rotates.", "The Sun rises in the east every morning."], correct: 0 },
+            { id: 18, competencyId: 3, competency: "Identify evidence of global warming and climate change.", text: "Which gas is a major contributor to human-caused global warming?", options: ["Argon", "Carbon dioxide", "Helium", "Neon"], correct: 1 },
+            { id: 19, competencyId: 3, competency: "Identify evidence of global warming and climate change.", text: "Which observation is evidence of long-term climate change rather than a single weather event?", options: ["A thunderstorm occurring this afternoon", "Rain falling for two hours in one town", "A windy morning followed by a calm afternoon", "A sustained increase in average temperatures over several decades"], correct: 3 },
+            { id: 20, competencyId: 3, competency: "Identify evidence of global warming and climate change.", text: "Why does increasing atmospheric carbon dioxide contribute to global warming?", options: ["It absorbs and re-emits infrared radiation, contributing to the greenhouse effect.", "It prevents all sunlight from reaching Earth.", "It removes all heat from the atmosphere.", "It stops Earth from rotating."], correct: 0 },
+            { id: 21, competencyId: 3, competency: "Identify evidence of global warming and climate change.", text: "Scientists compare satellite images of a glacier taken several decades apart. The images show that the glacier has become smaller. What does this observation suggest?", options: ["Earth’s gravity has disappeared.", "The glacier is producing more ice than before.", "Rising temperatures may be contributing to glacier retreat.", "The atmosphere no longer contains greenhouse gases."], correct: 2 },
+            { id: 22, competencyId: 3, competency: "Identify evidence of global warming and climate change.", text: "A coastal community experiences more frequent flooding as sea levels rise. Which explanation best connects this observation to global warming?", options: ["Warming causes seawater to expand and contributes to land-ice melting, raising sea levels.", "Rising sea levels are caused only by daily changes in rainfall.", "Global warming decreases the volume of ocean water.", "Global warming prevents glaciers from melting."], correct: 0 },
+            { id: 23, competencyId: 3, competency: "Identify evidence of global warming and climate change.", text: "A student claims that global warming is not real because it snowed heavily in a neighboring region during one unusual cold spell. Which response is scientifically correct?", options: ["Weather and climate mean exactly the same thing.", "Global warming can be measured only during summer.", "One cold event proves that global temperatures are decreasing.", "A short-term weather event does not disprove a long-term global temperature trend."], correct: 3 },
+            { id: 24, competencyId: 3, competency: "Identify evidence of global warming and climate change.", text: "Which set of observations provides the strongest evidence of ongoing global warming?", options: ["Rising global average temperatures, retreating glaciers, and rising sea levels", "One unusually hot day, one thunderstorm, and one windy afternoon", "Changes in the Moon’s phases and the occurrence of tides", "A single local flood and one unusually cold morning"], correct: 0 },
+            { id: 25, competencyId: 3, competency: "Identify evidence of global warming and climate change.", text: "A student examines data showing rising global temperatures, decreasing Arctic sea ice, and increasing sea levels over several decades. Which conclusion is best supported by the evidence?", options: ["Multiple long-term observations support the conclusion that Earth is warming and that climate systems are changing.", "Climate change is caused entirely by natural events, and human activities have no effect.", "The data prove that every location on Earth becomes warmer every day.", "The observations show that weather conditions never change naturally."], correct: 0 }
+        ];
+
+        // ================================================================
+        //  CHEMICAL FORMULA FORMATTING
+        // ================================================================
+
+        function formatChemicalText(text) {
+            if (!text) return text;
+            let result = text.replace(/(\([^)]+\))(\d+)/g, (match, group, num) => {
+                return group + '<sub>' + num + '</sub>';
+            });
+            result = result.replace(/([A-Z][a-z]?)(\d+)/g, (match, elem, num) => {
+                return elem + '<sub>' + num + '</sub>';
+            });
+            return result;
+        }
+
+        // ================================================================
+        //  DEVICE DETECTION
+        // ================================================================
+
+        function detectDevice() {
+            const ua = navigator.userAgent;
+            if (/tablet|ipad|playbook|silk/i.test(ua)) {
+                return 'Tablet';
+            }
+            if (/mobile|android|iphone|ipod|blackberry|windows phone/i.test(ua)) {
+                return 'Mobile';
+            }
+            if (/windows|mac|linux|cros/i.test(ua) && !/mobile|tablet/i.test(ua)) {
+                if (window.screen.width >= 1366) {
+                    return 'Desktop';
+                }
+                return 'Laptop';
+            }
+            return 'Desktop';
+        }
+
+        // ================================================================
+        //  SESSION MANAGEMENT
+        // ================================================================
+
+        function generateSessionId() {
+            const now = new Date();
+            const datePart = now.getFullYear() +
+                String(now.getMonth() + 1).padStart(2, '0') +
+                String(now.getDate()).padStart(2, '0');
+            const randomPart = Math.random().toString(36).substring(2, 8).toUpperCase();
+            return 'ES-' + datePart + '-' + randomPart;
+        }
+
+        function saveSession() {
+            const sessionData = {
+                sessionId: state.sessionId || null,
+                lastName: state.lastName,
+                firstName: state.firstName,
+                gender: state.gender,
+                section: state.section,
+                shuffledQuestions: state.shuffledQuestions,
+                shuffledOptions: state.shuffledOptions,
+                answers: state.answers,
+                currentQuestion: state.currentQuestion,
+                startTime: state.startTime ? state.startTime.toISOString() : null,
+                cheatingAttempts: state.cheatingAttempts,
+                quizEnded: state.quizEnded,
+                submitted: state.submitted
+            };
+            try {
+                sessionStorage.setItem('quizSession', JSON.stringify(sessionData));
+            } catch (e) {}
+        }
+
+        function loadSession() {
+            const stored = sessionStorage.getItem('quizSession');
+            if (!stored) return null;
+            try {
+                return JSON.parse(stored);
+            } catch (e) {
+                return null;
+            }
+        }
+
+        function clearSession() {
+            try {
+                sessionStorage.removeItem('quizSession');
+            } catch (e) {}
+        }
+
+        // ================================================================
+        //  APP STATE
+        // ================================================================
+
+        const state = {
+            sessionId: null,
+            lastName: '',
+            firstName: '',
+            gender: '',
+            section: '',
+            currentQuestion: 0,
+            answers: new Array(QUESTIONS.length).fill(null),
+            startTime: null,
+            endTime: null,
+            cheatingAttempts: 0,
+            shuffledQuestions: [],
+            shuffledOptions: [],
+            timerInterval: null,
+            submitted: false,
+            quizEnded: false,
+            submissionInProgress: false,
+            submissionData: null,
+            device: 'Desktop'
+        };
+
+        // ================================================================
+        //  DOM REFS
+        // ================================================================
+
+        const $ = id => document.getElementById(id);
+
+        const warningScreen = $('warning-screen');
+        const quizScreen = $('quiz-screen');
+        const resultsScreen = $('results-screen');
+
+        const studentLastName = $('student-lastname');
+        const studentFirstName = $('student-firstname');
+        const genderRadios = document.querySelectorAll('input[name="gender"]');
+        const studentSectionSelect = $('student-section');
+        const passcodeGroup = $('passcode-group');
+        const passcodeInput = $('section-passcode');
+        const passcodeError = $('passcode-error');
+        const accessMessage = $('access-message');
+        const startBtn = $('start-quiz');
+
+        const questionText = $('question-text');
+        const optionsContainer = $('options-container');
+        const questionNav = $('question-nav');
+        const prevBtn = $('prev-question');
+        const nextBtn = $('next-question');
+        const submitBtn = $('submit-quiz');
+        const currentTitle = $('current-question-title');
+        const progressBar = $('quiz-progress');
+        const timerDisplay = $('quiz-timer');
+        const cheatingWarning = $('cheating-warning');
+        const resultsSummary = $('results-summary');
+        const submitRecordBtn = $('submit-record');
+        const submissionStatus = $('submission-status');
+        const verificationPanel = $('verification-panel');
+        const verificationGrid = $('verification-grid');
+        const printResultBtn = $('print-result');
+        const savePdfBtn = $('save-pdf');
+
+        const fullscreenOverlay = $('fullscreen-overlay');
+        const fullscreenCountdown = $('fullscreen-countdown');
+        const returnFullscreenBtn = $('return-fullscreen');
+
+        const headerExamTitle = $('header-exam-title');
+        const headerSchoolYear = $('header-school-year');
+
+        // ================================================================
+        //  POPULATE HEADER FROM EXAM_INFORMATION
+        // ================================================================
+
+        function populateHeader() {
+            const term = EXAM_INFO.TERM;
+            const examTitle = EXAM_INFO.EXAM_TITLE;
+            const subject = EXAM_INFO.SUBJECT;
+            const schoolYear = EXAM_INFO.SCHOOL_YEAR;
+
+            headerExamTitle.textContent = term + ' ' + examTitle + ' in ' + subject;
+            headerSchoolYear.textContent = 'S.Y. ' + schoolYear;
+
+            document.title = subject + ' ' + examTitle;
+        }
+
+        // ================================================================
+        //  MONITORING SYSTEM
+        // ================================================================
+
+        function setMonitoringColor(status) {
+            switch (status) {
+                case 'normal':
+                    document.body.style.backgroundColor = COLORS.NORMAL;
+                    break;
+                case 'active':
+                    document.body.style.backgroundColor = COLORS.ACTIVE;
+                    break;
+                case 'warning':
+                    document.body.style.backgroundColor = COLORS.WARNING;
+                    break;
+                case 'terminated':
+                    document.body.style.backgroundColor = COLORS.TERMINATED;
+                    break;
+                default:
+                    document.body.style.backgroundColor = COLORS.NORMAL;
+            }
+        }
+
+        // ================================================================
+        //  DATE & TIME HELPERS
+        // ================================================================
+
+        function getCurrentTimeString() {
+            const now = new Date();
+            const hh = String(now.getHours()).padStart(2, '0');
+            const mm = String(now.getMinutes()).padStart(2, '0');
+            return hh + ':' + mm;
+        }
+
+        function getCurrentDateString() {
+            const now = new Date();
+            const y = now.getFullYear();
+            const m = String(now.getMonth() + 1).padStart(2, '0');
+            const d = String(now.getDate()).padStart(2, '0');
+            return y + '-' + m + '-' + d;
+        }
+
+        function isTimeBetween(current, start, end) {
+            return current >= start && current <= end;
+        }
+
+        function isTestingWindowActive() {
+            const now = getCurrentTimeString();
+            return isTimeBetween(now, TESTING_WINDOW_START, TESTING_WINDOW_END);
+        }
+
+        function isExamDateValid() {
+            if (APP_MODE === 'TESTING' || APP_MODE === 'OPEN') {
+                return true;
+            }
+            if (APP_MODE === 'EXAM') {
+                return getCurrentDateString() === EXAM_DATE;
+            }
+            return true;
+        }
+
+        function isSectionAllowed(section) {
+            if (APP_MODE === 'TESTING') {
+                return isTestingWindowActive();
+            }
+            if (APP_MODE === 'EXAM') {
+                const slot = SECTION_SCHEDULE[section];
+                if (!slot) return false;
+                const now = getCurrentTimeString();
+                // Require both the overall official testing window and the section's assigned slot.
+                return isTestingWindowActive() && isTimeBetween(now, slot.start, slot.end);
+            }
+            if (APP_MODE === 'OPEN') {
+                return true;
+            }
+            return isTestingWindowActive();
+        }
+
+        function isSharedPasscode(passcode) {
+            // Shared/open passcodes intentionally bypass the exam date and section time slot.
+            const normalized = String(passcode || '').trim().toUpperCase();
+            return !!normalized && OPEN_PASSCODES.some(code =>
+                normalized === String(code).trim().toUpperCase()
+            );
+        }
+
+        function validatePasscode(section, passcode) {
+            // Accept the selected section's passcode AND any configured open passcode.
+            // Comparison is case-insensitive and ignores accidental leading/trailing spaces.
+            const trimmed = String(passcode || '').trim();
+            if (!trimmed) return false;
+
+            const normalized = trimmed.toUpperCase();
+
+            // First check the section-specific passcode.
+            const expected = SECTION_PASSCODES[section];
+            if (expected && normalized === String(expected).trim().toUpperCase()) {
+                return true;
+            }
+
+            // Shared passcodes remain active regardless of exam date/time.
+            return isSharedPasscode(normalized);
+        }
+
+        // ================================================================
+        //  ACCESS VALIDATION — FIXED: no longer controls passcode visibility
+        // ================================================================
+
+        function checkAccess() {
+            const lastName = studentLastName.value.trim();
+            const firstName = studentFirstName.value.trim();
+            const section = studentSectionSelect.value;
+            const passcode = passcodeInput.value.trim();
+            const gender = document.querySelector('input[name="gender"]:checked');
+
+            passcodeError.classList.remove('visible');
+
+            if (!lastName) {
+                accessMessage.textContent = 'Please enter your last name.';
+                accessMessage.className = 'access-message access-denied';
+                startBtn.disabled = true;
+                return false;
+            }
+
+            if (!firstName) {
+                accessMessage.textContent = 'Please enter your first name.';
+                accessMessage.className = 'access-message access-denied';
+                startBtn.disabled = true;
+                return false;
+            }
+
+            if (!gender) {
+                accessMessage.textContent = 'Please select your gender.';
+                accessMessage.className = 'access-message access-denied';
+                startBtn.disabled = true;
+                return false;
+            }
+
+            if (!section) {
+                accessMessage.textContent = 'Please select your section.';
+                accessMessage.className = 'access-message access-denied';
+                startBtn.disabled = true;
+                return false;
+            }
+
+            if (!passcode) {
+                accessMessage.textContent = 'Please enter your passcode.';
+                accessMessage.className = 'access-message access-denied';
+                startBtn.disabled = true;
+                return false;
+            }
+
+            if (!validatePasscode(section, passcode)) {
+                passcodeError.classList.add('visible');
+                if (APP_MODE === 'OPEN') {
+                    accessMessage.textContent = 'Incorrect open passcode. Please use one of the shared open passcodes: ' +
+                        OPEN_PASSCODES.join(', ');
+                } else {
+                    accessMessage.textContent = 'Incorrect passcode. Please try again.';
+                }
+                accessMessage.className = 'access-message access-denied';
+                startBtn.disabled = true;
+                return false;
+            }
+            passcodeError.classList.remove('visible');
+
+            const usingSharedPasscode = isSharedPasscode(passcode);
+
+            // Section-specific passcodes are restricted to the official date and slot.
+            // Shared passcodes remain usable before, during, and after the official exam window.
+            if (!usingSharedPasscode && !isExamDateValid()) {
+                accessMessage.textContent =
+                    'This examination is only available on ' + EXAM_DATE +
+                    '. Please take the examination only on the official examination date.';
+                accessMessage.className = 'access-message access-denied';
+                startBtn.disabled = true;
+                return false;
+            }
+
+            if (!usingSharedPasscode && !isSectionAllowed(section)) {
+                if (APP_MODE === 'TESTING') {
+                    accessMessage.textContent =
+                        'Testing mode is active. Please take the quiz during the testing window: ' +
+                        TESTING_WINDOW_START + ' – ' + TESTING_WINDOW_END + '.';
+                } else if (APP_MODE === 'EXAM') {
+                    const slot = SECTION_SCHEDULE[section];
+                    if (slot) {
+                        accessMessage.textContent =
+                            'Your assigned testing schedule has not yet started or has already ended. ' +
+                            'Your section is scheduled for ' + slot.start + ' – ' + slot.end + '.';
+                    } else {
+                        accessMessage.textContent =
+                            'Your assigned testing schedule has not yet started or has already ended. ' +
+                            'Please take the quiz only during your assigned schedule.';
+                    }
+                } else {
+                    accessMessage.textContent = 'Access denied. Please check the schedule.';
+                }
+                accessMessage.className = 'access-message access-denied';
+                startBtn.disabled = true;
+                return false;
+            }
+
+            let msg = '✅ All requirements satisfied. You may start the quiz.';
+            if (APP_MODE === 'TESTING') {
+                msg += ' (Testing mode — ' + TESTING_WINDOW_START + ' – ' + TESTING_WINDOW_END + ')';
+            } else if (APP_MODE === 'EXAM') {
+                const slot = SECTION_SCHEDULE[section];
+                if (slot) msg += ' (' + slot.start + ' – ' + slot.end + ')';
+            } else if (APP_MODE === 'OPEN') {
+                msg += ' (Open mode — shared passcode accepted)';
+            }
+            accessMessage.textContent = msg;
+            accessMessage.className = 'access-message access-allowed';
+            startBtn.disabled = false;
+            return true;
+        }
+
+        // ================================================================
+        //  SHUFFLE
+        // ================================================================
+
+        function shuffleArray(arr) {
+            const a = [...arr];
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
+
+        function prepareQuestions() {
+            state.shuffledQuestions = shuffleArray(QUESTIONS);
+            state.shuffledOptions = state.shuffledQuestions.map(q => {
+                const opts = shuffleArray(q.options);
+                const correctAnswer = q.options[q.correct];
+                const newCorrect = opts.indexOf(correctAnswer);
+                return { options: opts, correctIndex: newCorrect };
+            });
+            state.answers = new Array(QUESTIONS.length).fill(null);
+        }
+
+        // ================================================================
+        //  STRICT ONLINE MODE (local HTML only; Apps Script contract unchanged)
+        // ================================================================
+        let onlineLockActive = false;
+        let connectionCheckBusy = false;
+        let lastKnownInternet = true;
+        const onlineLockOverlay = document.getElementById('online-lock-overlay');
+        const onlineLockStatus = document.getElementById('online-lock-status');
+
+        async function hasRealInternet(timeoutMs = 4500) {
+            if (!navigator.onLine) return false;
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), timeoutMs);
+            try {
+                // A no-cors request only needs to complete; response content is not read.
+                await fetch('https://www.google.com/generate_204?exam_check=' + Date.now(), {
+                    method: 'GET', mode: 'no-cors', cache: 'no-store', signal: controller.signal
+                });
+                return true;
+            } catch (e) { return false; }
+            finally { clearTimeout(timeout); }
+        }
+
+        function setOnlineLock(locked) {
+            onlineLockActive = locked;
+            onlineLockOverlay.classList.toggle('active', locked);
+            if (locked) onlineLockStatus.textContent = 'Waiting for internet connection…';
+        }
+
+        async function checkInternetAndUpdateLock() {
+            if (connectionCheckBusy) return;
+            connectionCheckBusy = true;
+            const online = await hasRealInternet();
+            lastKnownInternet = online;
+            if (quizScreen.classList.contains('active') && !state.quizEnded) {
+                if (online) {
+                    if (onlineLockActive) {
+                        setOnlineLock(false);
+                        onlineLockStatus.textContent = 'Connection restored.';
+                    }
+                } else {
+                    setOnlineLock(true);
+                }
+            }
+            connectionCheckBusy = false;
+        }
+
+        // Lock immediately on browser network loss; real reachability is also checked periodically.
+        window.addEventListener('offline', () => {
+            lastKnownInternet = false;
+            if (quizScreen.classList.contains('active') && !state.quizEnded) setOnlineLock(true);
+        });
+        window.addEventListener('online', checkInternetAndUpdateLock);
+        setInterval(checkInternetAndUpdateLock, 2500);
+
+        // ================================================================
+        //  QUIZ LIFECYCLE
+        // ================================================================
+
+        async function startQuiz() {
+            if (!(await hasRealInternet())) {
+                alert('An active internet connection is required to start this examination. Please connect and try again.');
+                return;
+            }
+            const lastName = studentLastName.value.trim();
+            const firstName = studentFirstName.value.trim();
+            const section = studentSectionSelect.value;
+            const genderEl = document.querySelector('input[name="gender"]:checked');
+            const passcode = passcodeInput.value.trim();
+
+            // ─── Validate all fields ─────────────────────────────────────
+            if (!lastName) { alert('Please enter your last name.'); return; }
+            if (!firstName) { alert('Please enter your first name.'); return; }
+            if (!genderEl) { alert('Please select your gender.'); return; }
+            if (!section) { alert('Please select your section.'); return; }
+            if (!passcode) { alert('Please enter your passcode.'); return; }
+
+            if (!validatePasscode(section, passcode)) {
+                passcodeError.classList.add('visible');
+                if (APP_MODE === 'OPEN') {
+                    accessMessage.textContent = 'Incorrect open passcode. Please use one of the shared open passcodes: ' +
+                        OPEN_PASSCODES.join(', ');
+                } else {
+                    accessMessage.textContent = 'Incorrect passcode. Please try again.';
+                }
+                accessMessage.className = 'access-message access-denied';
+                return;
+            }
+
+            const usingSharedPasscode = isSharedPasscode(passcode);
+
+            // Re-check access at start: shared passcodes bypass date/slot restrictions only.
+            if (!usingSharedPasscode && !isExamDateValid()) {
+                alert('This examination is only available on ' + EXAM_DATE + '.');
+                return;
+            }
+
+            if (!usingSharedPasscode && !isSectionAllowed(section)) {
+                alert('Access denied. Please check your section schedule.');
+                return;
+            }
+
+            // ─── Store student info ──────────────────────────────────────
+            state.lastName = lastName;
+            state.firstName = firstName;
+            state.gender = genderEl.value;
+            state.section = section;
+            state.device = detectDevice();
+
+            // ─── Generate unique session ID ──────────────────────────────
+            state.sessionId = generateSessionId();
+
+            // ─── Shuffle questions and choices (once) ─────────────────────
+            prepareQuestions();
+
+            // ─── Save initial session ─────────────────────────────────────
+            state.startTime = new Date();
+            state.quizEnded = false;
+            state.submitted = false;
+            state.cheatingAttempts = 0;
+            saveSession();
+
+            // ─── Switch screens ──────────────────────────────────────────
+            warningScreen.classList.remove('active');
+            quizScreen.classList.add('active');
+
+            setMonitoringColor('active');
+
+            enableFullscreen();
+
+            startTimer(TIME_LIMIT_MINUTES * 60);
+
+            showQuestion(0);
+            buildNav();
+            updateNavAndProgress();
+        }
+
+        function enableFullscreen() {
+            const el = document.documentElement;
+            if (el.requestFullscreen) el.requestFullscreen();
+            else if (el.mozRequestFullScreen) el.mozRequestFullScreen();
+            else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+            else if (el.msRequestFullscreen) el.msRequestFullscreen();
+            fullscreenOverlay.classList.remove('active');
+        }
+
+        function startTimer(duration) {
+            let timer = duration;
+            const mins0 = Math.floor(timer / 60);
+            const secs0 = timer % 60;
+            timerDisplay.textContent =
+                `${String(mins0).padStart(2, '0')}:${String(secs0).padStart(2, '0')}`;
+
+            state.timerInterval = setInterval(() => {
+                const mins = Math.floor(timer / 60);
+                const secs = timer % 60;
+                timerDisplay.textContent =
+                    `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+                if (onlineLockActive) return; // Pause countdown while the exam is locked offline.
+                if (--timer < 0) {
+                    clearInterval(state.timerInterval);
+                    if (!state.quizEnded) submitQuiz();
+                }
+            }, 1000);
+        }
+
+        function showQuestion(index) {
+            state.currentQuestion = index;
+            const q = state.shuffledQuestions[index];
+            const opts = state.shuffledOptions[index];
+
+            questionText.innerHTML = formatChemicalText(q.text);
+
+            optionsContainer.innerHTML = '';
+            opts.options.forEach((opt, i) => {
+                const div = document.createElement('div');
+                div.className = 'option';
+                if (state.answers[index] === i) div.classList.add('selected');
+                div.innerHTML = formatChemicalText(opt);
+                div.addEventListener('click', () => selectOption(i));
+                optionsContainer.appendChild(div);
+            });
+
+            updateNavAndProgress();
+            saveSession();
+        }
+
+        function selectOption(optionIndex) {
+            if (state.quizEnded) return;
+            const idx = state.currentQuestion;
+            optionsContainer.querySelectorAll('.option').forEach(el => el.classList.remove('selected'));
+            optionsContainer.children[optionIndex].classList.add('selected');
+            state.answers[idx] = optionIndex;
+            updateNavAndProgress();
+            saveSession();
+
+            setTimeout(() => {
+                if (state.quizEnded) return;
+                if (idx < state.shuffledQuestions.length - 1) {
+                    showQuestion(idx + 1);
+                } else {
+                    submitBtn.disabled = false;
+                }
+            }, 500);
+        }
+
+        function buildNav() {
+            questionNav.innerHTML = '';
+            for (let i = 0; i < state.shuffledQuestions.length; i++) {
+                const btn = document.createElement('button');
+                btn.className = 'nav-btn';
+                btn.textContent = i + 1;
+                btn.addEventListener('click', () => showQuestion(i));
+                questionNav.appendChild(btn);
+            }
+        }
+
+        function updateNavAndProgress() {
+            const btns = questionNav.querySelectorAll('.nav-btn');
+            btns.forEach((btn, i) => {
+                btn.classList.remove('active', 'answered');
+                if (i === state.currentQuestion) btn.classList.add('active');
+                if (state.answers[i] !== null) btn.classList.add('answered');
+            });
+
+            prevBtn.disabled = state.currentQuestion === 0;
+            nextBtn.disabled = state.currentQuestion === state.shuffledQuestions.length - 1;
+
+            currentTitle.textContent =
+                `Question ${state.currentQuestion + 1} of ${TOTAL_ITEMS}`;
+
+            const answered = state.answers.filter(a => a !== null).length;
+            const pct = (answered / TOTAL_ITEMS) * 100;
+            progressBar.style.width = pct + '%';
+        }
+
+        function showPreviousQuestion() {
+            if (state.currentQuestion > 0) showQuestion(state.currentQuestion - 1);
+        }
+
+        function showNextQuestion() {
+            if (state.currentQuestion < state.shuffledQuestions.length - 1)
+                showQuestion(state.currentQuestion + 1);
+        }
+
+        // ================================================================
+        //  SUBMIT QUIZ
+        // ================================================================
+
+        function submitQuiz() {
+            if (state.quizEnded || onlineLockActive || !navigator.onLine) return;
+            state.quizEnded = true;
+            setOnlineLock(false);
+            state.endTime = new Date();
+
+            if (state.timerInterval) {
+                clearInterval(state.timerInterval);
+                state.timerInterval = null;
+            }
+
+            let correct = 0;
+            state.shuffledQuestions.forEach((q, i) => {
+                const opts = state.shuffledOptions[i];
+                if (state.answers[i] === opts.correctIndex) correct++;
+            });
+            const score = (correct / state.shuffledQuestions.length) * 100;
+
+            displayResults(score, correct);
+
+            quizScreen.classList.remove('active');
+            resultsScreen.classList.add('active');
+
+            setMonitoringColor('normal');
+
+            if (document.exitFullscreen) document.exitFullscreen();
+            else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
+            else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+            else if (document.msExitFullscreen) document.msExitFullscreen();
+
+            fullscreenOverlay.classList.remove('active');
+
+            state.submitted = false;
+            state.submissionData = null;
+            verificationPanel.classList.remove('visible');
+            submitRecordBtn.textContent = 'Submit to Record';
+            submitRecordBtn.disabled = false;
+            submitRecordBtn.className = 'btn btn-success';
+            submissionStatus.className = 'submission-status';
+            submissionStatus.textContent = '';
+            submissionStatus.style.display = 'none';
+            state.submissionInProgress = false;
+
+            clearSession();
+        }
+
+        function displayResults(score, correct) {
+            const elapsed = Math.round((state.endTime - state.startTime) / 1000);
+            const mins = Math.floor(elapsed / 60);
+            const secs = elapsed % 60;
+
+            const fullName = state.lastName.toUpperCase() + ', ' + state.firstName;
+
+            const examInfoHTML = `
+                <div class="exam-info">
+                    <span>${EXAM_INFO.SUBJECT}</span> &nbsp;·&nbsp;
+                    <span>${EXAM_INFO.TERM}</span> &nbsp;·&nbsp;
+                    <span>${EXAM_INFO.EXAM_TITLE}</span> &nbsp;·&nbsp;
+                    <span>S.Y. ${EXAM_INFO.SCHOOL_YEAR}</span>
+                </div>
+            `;
+
+            resultsSummary.innerHTML = examInfoHTML + `
+                <p><strong>Name:</strong> ${fullName}</p>
+                <p><strong>Gender:</strong> ${state.gender}</p>
+                <p><strong>Section:</strong> ${state.section}</p>
+                <p><strong>Score:</strong> ${score.toFixed(1)}% (${correct} out of ${TOTAL_ITEMS})</p>
+                <p><strong>Time:</strong> ${mins}m ${secs}s</p>
+                <p><strong>Cheating attempts:</strong> ${state.cheatingAttempts}</p>
+                <p style="margin-top:14px;">Click <strong>Submit to Record</strong> to save your results.</p>
+            `;
+
+            state.submitted = false;
+            state.submissionData = null;
+            verificationPanel.classList.remove('visible');
+            submitRecordBtn.textContent = 'Submit to Record';
+            submitRecordBtn.disabled = false;
+            submitRecordBtn.className = 'btn btn-success';
+            submissionStatus.className = 'submission-status';
+            submissionStatus.textContent = '';
+            submissionStatus.style.display = 'none';
+            state.submissionInProgress = false;
+        }
+
+        // ================================================================
+        //  VERIFICATION PANEL
+        // ================================================================
+
+        function showVerificationPanel(submissionId, submittedAt) {
+            const dateObj = new Date(submittedAt);
+            const dateStr = dateObj.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            const timeStr = dateObj.toLocaleTimeString('en-US', {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+
+            let correct = 0;
+            state.shuffledQuestions.forEach((q, i) => {
+                const opts = state.shuffledOptions[i];
+                if (state.answers[i] === opts.correctIndex) correct++;
+            });
+            const score = (correct / state.shuffledQuestions.length) * 100;
+
+            const fullName = state.lastName + ', ' + state.firstName;
+
+            const gridHTML = `
+                <div class="verification-item">
+                    <span class="label">Submission Status</span>
+                    <span class="value success">✅ Successfully Recorded</span>
+                </div>
+                <div class="verification-item">
+                    <span class="label">Submission ID</span>
+                    <span class="value">${submissionId}</span>
+                </div>
+                <div class="verification-item">
+                    <span class="label">Date Submitted</span>
+                    <span class="value">${dateStr}</span>
+                </div>
+                <div class="verification-item">
+                    <span class="label">Time Submitted</span>
+                    <span class="value">${timeStr}</span>
+                </div>
+                <div class="verification-item">
+                    <span class="label">Exam Code</span>
+                    <span class="value">${EXAM_INFO.EXAM_CODE}</span>
+                </div>
+                <div class="verification-item">
+                    <span class="label">Subject</span>
+                    <span class="value">${EXAM_INFO.SUBJECT}</span>
+                </div>
+                <div class="verification-item">
+                    <span class="label">Exam Title</span>
+                    <span class="value">${EXAM_INFO.TERM} ${EXAM_INFO.EXAM_TITLE}</span>
+                </div>
+                <div class="verification-item">
+                    <span class="label">Student Name</span>
+                    <span class="value">${fullName}</span>
+                </div>
+                <div class="verification-item">
+                    <span class="label">Section</span>
+                    <span class="value">${state.section}</span>
+                </div>
+                <div class="verification-item">
+                    <span class="label">Score</span>
+                    <span class="value">${correct} / ${TOTAL_ITEMS} (${score.toFixed(1)}%)</span>
+                </div>
+            `;
+
+            verificationGrid.innerHTML = gridHTML;
+            verificationPanel.classList.add('visible');
+
+            setTimeout(() => {
+                verificationPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 300);
+        }
+
+        // ================================================================
+        //  BUILD RESPONSES DATA
+        // ================================================================
+
+        function buildResponsesData() {
+            const responses = [];
+            for (let i = 0; i < state.shuffledQuestions.length; i++) {
+                const q = state.shuffledQuestions[i];
+                const opts = state.shuffledOptions[i];
+                const answerIndex = state.answers[i];
+                const isCorrect = answerIndex === opts.correctIndex;
+                const answerLetter = answerIndex !== null && answerIndex !== undefined ?
+                    String.fromCharCode(65 + answerIndex) :
+                    '';
+                const correctLetter = String.fromCharCode(65 + opts.correctIndex);
+                const answerText = answerIndex !== null && answerIndex !== undefined ?
+                    opts.options[answerIndex] :
+                    '';
+                const correctText = opts.options[opts.correctIndex];
+
+                responses.push({
+                    questionId: q.id,
+                    questionText: q.text,
+                    answerIndex: answerIndex,
+                    answerLetter: answerLetter,
+                    answerText: answerText,
+                    correctIndex: opts.correctIndex,
+                    correctLetter: correctLetter,
+                    correctText: correctText,
+                    isCorrect: isCorrect,
+                    competencyId: q.competencyId || '',
+                    competency: q.competency || ''
+                });
+            }
+            return responses;
+        }
+
+        // ================================================================
+        //  GOOGLE SHEETS INTEGRATION
+        // ================================================================
+
+        async function submitResultsToGoogleSheet(score, correct) {
+            if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes('YOUR_DEPLOYMENT_ID')) {
+                console.warn('⚠️ Google Script URL not configured. Using simulation mode.');
+                return { success: true, submissionId: 'SIM-' + Date.now(), timestamp: new Date().toISOString() };
+            }
+
+            const elapsedMs = state.endTime - state.startTime;
+            const timeUsedSeconds = Math.round(elapsedMs / 1000);
+            const timeLimitSeconds = TIME_LIMIT_MINUTES * 60;
+            const timeRemaining = Math.max(0, timeLimitSeconds - timeUsedSeconds);
+
+            const responsesData = buildResponsesData();
+
+            const payload = {
+                timestamp: state.endTime.toISOString(),
+                examCode: EXAM_INFO.EXAM_CODE,
+                totalItems: TOTAL_ITEMS,
+                lastName: state.lastName,
+                firstName: state.firstName,
+                gender: state.gender,
+                section: state.section,
+                score: correct,
+                scorePercent: (correct / TOTAL_ITEMS) * 100,
+                cheatingAttempts: state.cheatingAttempts,
+                startedAt: state.startTime.toISOString(),
+                finishedAt: state.endTime.toISOString(),
+                appMode: APP_MODE,
+                device: state.device,
+                timeUsedSeconds: timeUsedSeconds,
+                timeRemainingSeconds: timeRemaining,
+                responsesData: responsesData
+            };
+
+            console.log('📤 Submitting to Google Sheets:', payload);
+
+            const response = await fetch(GOOGLE_SCRIPT_URL, {
+  method: 'POST',
+  body: JSON.stringify(payload)
+});
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const result = await response.json();
+            return result;
+        }
+
+        // ================================================================
+        //  SUBMIT TO RECORD
+        // ================================================================
+
+        function submitToRecord() {
+            if (onlineLockActive || !navigator.onLine) {
+                alert('An active internet connection is required to submit your results. Reconnect and try again.');
+                return;
+            }
+            if (state.submitted) {
+                alert('Results have already been submitted.');
+                return;
+            }
+
+            if (state.submissionInProgress) {
+                return;
+            }
+
+            let correct = 0;
+            state.shuffledQuestions.forEach((q, i) => {
+                const opts = state.shuffledOptions[i];
+                if (state.answers[i] === opts.correctIndex) correct++;
+            });
+            const score = (correct / state.shuffledQuestions.length) * 100;
+
+            state.submissionInProgress = true;
+            submitRecordBtn.textContent = 'Submitting...';
+            submitRecordBtn.disabled = true;
+            submitRecordBtn.className = 'btn';
+            submissionStatus.className = 'submission-status loading';
+            submissionStatus.textContent = '⏳ Submitting your results... Please wait.';
+            submissionStatus.style.display = 'block';
+
+            submitResultsToGoogleSheet(score, correct)
+                .then(result => {
+                    state.submissionInProgress = false;
+                    if (result && result.success) {
+                        const submissionId = result.submissionId || 'SUB-' + new Date().getFullYear() +
+                            '-' + String(Math.floor(Math.random() * 900000) + 100000).padStart(6, '0');
+                        const timestamp = result.timestamp || new Date().toISOString();
+
+                        state.submissionData = {
+                            success: true,
+                            submissionId: submissionId,
+                            timestamp: timestamp
+                        };
+
+                        submitRecordBtn.textContent = 'Submitted ✓';
+                        submitRecordBtn.disabled = true;
+                        submitRecordBtn.className = 'btn btn-success';
+                        submissionStatus.className = 'submission-status success';
+                        submissionStatus.textContent = '✅ Results successfully submitted.';
+                        submissionStatus.style.display = 'block';
+                        state.submitted = true;
+
+                        showVerificationPanel(submissionId, timestamp);
+                    } else {
+                        const errorMsg = result && result.error ? result.error : 'Unknown error';
+                        submitRecordBtn.textContent = 'Submit to Record';
+                        submitRecordBtn.disabled = false;
+                        submitRecordBtn.className = 'btn btn-danger';
+                        submissionStatus.className = 'submission-status error';
+                        submissionStatus.textContent = '❌ Unable to submit your results. Please check your internet connection and try again.';
+                        submissionStatus.style.display = 'block';
+                        setTimeout(() => {
+                            submitRecordBtn.className = 'btn btn-success';
+                        }, 500);
+                    }
+                })
+                .catch(error => {
+                    console.error('Submission error:', error);
+                    state.submissionInProgress = false;
+                    submitRecordBtn.textContent = 'Submit to Record';
+                    submitRecordBtn.disabled = false;
+                    submitRecordBtn.className = 'btn btn-danger';
+                    submissionStatus.className = 'submission-status error';
+                    submissionStatus.textContent = '❌ Unable to submit your results. Please check your internet connection and try again.';
+                    submissionStatus.style.display = 'block';
+                    setTimeout(() => {
+                        submitRecordBtn.className = 'btn btn-success';
+                    }, 500);
+                });
+        }
+
+        // ================================================================
+        //  PRINT RESULT
+        // ================================================================
+
+        function printResult() {
+            window.print();
+        }
+
+        function saveAsPdf() {
+            window.print();
+        }
+
+        // ================================================================
+        //  ANTI‑CHEATING
+        // ================================================================
+
+        function recordCheating(reason) {
+            if (!quizScreen.classList.contains('active') || state.quizEnded) return;
+
+            state.cheatingAttempts++;
+            saveSession();
+
+            setMonitoringColor('warning');
+
+            cheatingWarning.textContent =
+                `⚠️ ${reason} — attempt #${state.cheatingAttempts}`;
+            cheatingWarning.style.display = 'block';
+            console.log(`[CHEAT] ${reason} at ${new Date().toISOString()}`);
+
+            setTimeout(() => { cheatingWarning.style.display = 'none'; }, 5000);
+
+            if (!document.fullscreenElement) showFullscreenWarning();
+
+            if (state.cheatingAttempts >= MAX_CHEATING_ATTEMPTS) {
+                setMonitoringColor('terminated');
+                alert('Quiz terminated due to multiple cheating attempts.');
+                clearSession();
+                submitQuiz();
+            }
+        }
+
+        function handleVisibilityChange() {
+            if (document.hidden && quizScreen.classList.contains('active'))
+                recordCheating('Tab switch');
+        }
+
+        function handleFullscreenChange() {
+            if (!document.fullscreenElement && quizScreen.classList.contains('active'))
+                showFullscreenWarning();
+        }
+
+        function handleWindowBlur() {
+            if (quizScreen.classList.contains('active')) recordCheating('Window lost focus');
+        }
+
+        function handleWindowFocus() {
+            setTimeout(() => { cheatingWarning.style.display = 'none'; }, 3000);
+        }
+
+        function preventDevTools(e) {
+            if (e.keyCode === 123 ||
+                (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) ||
+                (e.ctrlKey && e.keyCode === 85)) {
+                e.preventDefault();
+                recordCheating('Developer tools');
+                return false;
+            }
+        }
+
+        function preventContextMenu(e) {
+            if (quizScreen.classList.contains('active')) {
+                e.preventDefault();
+                recordCheating('Right‑click');
+                return false;
+            }
+        }
+
+        function preventCopyPaste(e) {
+            if (quizScreen.classList.contains('active')) {
+                e.preventDefault();
+                recordCheating(e.type);
+                return false;
+            }
+        }
+
+        function showFullscreenWarning() {
+            fullscreenOverlay.classList.add('active');
+            let countdown = 10;
+            fullscreenCountdown.textContent = `Returning in ${countdown} seconds…`;
+            const interval = setInterval(() => {
+                countdown--;
+                fullscreenCountdown.textContent = `Returning in ${countdown} seconds…`;
+                if (countdown <= 0) {
+                    clearInterval(interval);
+                    enableFullscreen();
+                }
+            }, 1000);
+        }
+
+        // ================================================================
+        //  RESTORE SESSION
+        // ================================================================
+
+        function restoreSession(sessionData) {
+            state.sessionId = sessionData.sessionId;
+            state.lastName = sessionData.lastName;
+            state.firstName = sessionData.firstName;
+            state.gender = sessionData.gender;
+            state.section = sessionData.section;
+            state.shuffledQuestions = sessionData.shuffledQuestions;
+            state.shuffledOptions = sessionData.shuffledOptions;
+            state.answers = sessionData.answers;
+            state.currentQuestion = sessionData.currentQuestion;
+            state.startTime = new Date(sessionData.startTime);
+            state.cheatingAttempts = sessionData.cheatingAttempts || 0;
+            state.quizEnded = sessionData.quizEnded || false;
+            state.submitted = sessionData.submitted || false;
+            state.device = detectDevice();
+
+            if (state.quizEnded) {
+                clearSession();
+                return false;
+            }
+
+            const elapsedSeconds = (Date.now() - state.startTime.getTime()) / 1000;
+            const remaining = TIME_LIMIT_MINUTES * 60 - elapsedSeconds;
+            if (remaining <= 0) {
+                state.endTime = new Date();
+                let correct = 0;
+                state.shuffledQuestions.forEach((q, i) => {
+                    const opts = state.shuffledOptions[i];
+                    if (state.answers[i] === opts.correctIndex) correct++;
+                });
+                const score = (correct / state.shuffledQuestions.length) * 100;
+                displayResults(score, correct);
+                quizScreen.classList.remove('active');
+                resultsScreen.classList.add('active');
+                setMonitoringColor('normal');
+                clearSession();
+                return false;
+            }
+
+            warningScreen.classList.remove('active');
+            quizScreen.classList.add('active');
+
+            setMonitoringColor('active');
+
+            buildNav();
+            showQuestion(state.currentQuestion);
+            updateNavAndProgress();
+
+            startTimer(Math.max(0, remaining));
+
+            enableFullscreen();
+
+            return true;
+        }
+
+        // ================================================================
+        //  AUTO‑CAPITALIZATION for Name Fields
+        // ================================================================
+
+        function capitalizeName(str) {
+            if (!str) return '';
+
+            const hasTrailingSpace = str.endsWith(' ');
+
+            let result = str.replace(/^\s+/, '').replace(/\s{2,}/g, ' ');
+
+            if (result === '') return '';
+
+            const words = result.split(' ');
+
+            const processed = words.map(word => {
+                if (word === '') return '';
+
+                if (word.includes('-')) {
+                    return word.split('-').map(part => {
+                        if (part === '') return '';
+                        return part.charAt(0).toUpperCase() + part.slice(1).toLowerCase();
+                    }).join('-');
+                }
+
+                if (word.includes("'")) {
+                    return word.split("'").map(part => {
+                        if (part === '') return '';
+                        return part.charAt(0).toUpperCase() + part.slice(1).toLowerCase();
+                    }).join("'");
+                }
+
+                return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+            });
+
+            let finalResult = processed.join(' ');
+
+            if (hasTrailingSpace && !finalResult.endsWith(' ')) {
+                finalResult += ' ';
+            }
+
+            return finalResult;
+        }
+
+        function formatNameField(input) {
+            const cursorPos = input.selectionStart;
+            const oldValue = input.value;
+            const newValue = capitalizeName(oldValue);
+
+            if (newValue !== oldValue) {
+                input.value = newValue;
+                let newPos = Math.min(cursorPos, newValue.length);
+                if (cursorPos === oldValue.length) {
+                    newPos = newValue.length;
+                }
+                input.setSelectionRange(newPos, newPos);
+            }
+        }
+
+        studentLastName.addEventListener('input', function() {
+            formatNameField(this);
+        });
+
+        studentFirstName.addEventListener('input', function() {
+            formatNameField(this);
+        });
+
+        // ================================================================
+        //  INIT
+        // ================================================================
+
+        function init() {
+            populateHeader();
+
+            const validModes = ['TESTING', 'EXAM', 'OPEN'];
+            if (!validModes.includes(APP_MODE)) {
+                console.warn(
+                    '[APP_MODE] Invalid value: "' + APP_MODE +
+                    '". Expected "TESTING", "EXAM", or "OPEN". Defaulting to "TESTING".'
+                );
+            }
+
+            if (QUESTIONS.length !== TOTAL_ITEMS) {
+                console.warn(
+                    '[TOTAL_ITEMS] Mismatch: QUESTIONS.length = ' + QUESTIONS.length +
+                    ', TOTAL_ITEMS = ' + TOTAL_ITEMS + '. Please ensure they match.'
+                );
+            }
+
+            if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes('YOUR_DEPLOYMENT_ID')) {
+                console.warn('⚠️ Google Script URL not configured. Set SETTINGS.GOOGLE_SCRIPT.URL to your deployed script URL.');
+                console.log('ℹ️ The app will run in simulation mode for submissions.');
+            }
+
+            // ─── Check for existing session ──────────────────────────────
+            const sessionData = loadSession();
+            if (sessionData && !sessionData.quizEnded && sessionData.shuffledQuestions && sessionData.shuffledQuestions.length > 0) {
+                const restored = restoreSession(sessionData);
+                if (restored) {
+                    console.log('🔄 Session restored. Quiz resumed.');
+                }
+            } else {
+                warningScreen.classList.add('active');
+                quizScreen.classList.remove('active');
+                resultsScreen.classList.remove('active');
+                clearSession();
+            }
+
+            // ─── Event Listeners ─────────────────────────────────────────
+            studentLastName.addEventListener('input', checkAccess);
+            studentFirstName.addEventListener('input', checkAccess);
+            genderRadios.forEach(radio => radio.addEventListener('change', checkAccess));
+
+            // ─── Section change: show/hide passcode group ──────────────
+            studentSectionSelect.addEventListener('change', function() {
+                passcodeInput.value = '';
+                passcodeError.classList.remove('visible');
+                if (this.value !== '') {
+                    passcodeGroup.classList.add('visible');
+                } else {
+                    passcodeGroup.classList.remove('visible');
+                }
+                checkAccess();
+            });
+
+            // ─── Also handle initial state (if section is pre-selected) ──
+            if (studentSectionSelect.value !== '') {
+                passcodeGroup.classList.add('visible');
+            }
+
+            passcodeInput.addEventListener('input', checkAccess);
+            passcodeInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    if (!startBtn.disabled) startQuiz();
+                }
+            });
+
+            startBtn.addEventListener('click', startQuiz);
+            prevBtn.addEventListener('click', showPreviousQuestion);
+            nextBtn.addEventListener('click', showNextQuestion);
+            submitBtn.addEventListener('click', submitQuiz);
+
+            submitRecordBtn.addEventListener('click', submitToRecord);
+            printResultBtn.addEventListener('click', printResult);
+            savePdfBtn.addEventListener('click', saveAsPdf);
+
+            returnFullscreenBtn.addEventListener('click', enableFullscreen);
+
+            document.addEventListener('visibilitychange', handleVisibilityChange);
+            document.addEventListener('fullscreenchange', handleFullscreenChange);
+            window.addEventListener('blur', handleWindowBlur);
+            window.addEventListener('focus', handleWindowFocus);
+            document.addEventListener('keydown', preventDevTools);
+            document.addEventListener('contextmenu', preventContextMenu);
+            document.addEventListener('copy', preventCopyPaste);
+            document.addEventListener('cut', preventCopyPaste);
+            document.addEventListener('paste', preventCopyPaste);
+
+            if (!sessionData || sessionData.quizEnded) {
+                checkAccess();
+                prepareQuestions();
+            }
+
+            setMonitoringColor('normal');
+
+            console.log('📋 Quiz Configuration:');
+            console.log('  App Mode      :', APP_MODE);
+            console.log('  Exam Code     :', EXAM_INFO.EXAM_CODE, '(internal)');
+            console.log('  School Year   :', EXAM_INFO.SCHOOL_YEAR);
+            console.log('  Term          :', EXAM_INFO.TERM);
+            console.log('  Subject       :', EXAM_INFO.SUBJECT);
+            console.log('  Exam Title    :', EXAM_INFO.EXAM_TITLE);
+            console.log('  Total Items   :', TOTAL_ITEMS);
+            console.log('  Time Limit    :', TIME_LIMIT_MINUTES, 'minutes');
+            console.log('  Exam Date     :', EXAM_DATE);
+            console.log('  Testing Window:', TESTING_WINDOW_START + ' – ' + TESTING_WINDOW_END);
+            console.log('  Max Cheats    :', MAX_CHEATING_ATTEMPTS);
+            console.log('  Google Script :', GOOGLE_SCRIPT_URL || '(not configured)');
+            console.log('  Sections      :', Object.keys(SECTION_SCHEDULE).join(', '));
+            if (APP_MODE === 'OPEN') {
+                console.log('  Open Passcodes:', OPEN_PASSCODES.join(', '));
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
